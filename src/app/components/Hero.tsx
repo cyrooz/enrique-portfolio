@@ -48,7 +48,7 @@ const HeroWrapper = styled.section`
   overflow: hidden;
 
   @media (max-width: 768px) {
-    padding-top: 20px;
+    padding-top: 40px;
   }
 
   &::after {
@@ -72,31 +72,43 @@ const HeroWrapper = styled.section`
 `;
 
 const Figure = styled.figure`
-  margin: 0;
-  padding: 0;
   position: relative;
   width: 100%;
+  height: 100svh; // Optional: use here too
+  margin: 0;
+  padding: 0;
 `;
+
 
 const ImageWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: auto;
-  max-height: min(100vh, 850px);
-  aspect-ratio: 2 / 3;
   overflow: hidden;
+
+  /* iPhone + iPad (portrait & landscape) */
+  height: 100svh;
+
+  @media (min-width: 1025px) {
+    height: auto;
+    max-height: min(100vh, 850px);
+    aspect-ratio: 2 / 3;
+  }
 `;
 
 const StyledImage = styled(Image)`
-  object-fit: contain;
-  object-position: center top;
   width: 100%;
   height: 100%;
 
-  @media (max-width: 768px) {
-    object-position: center 40px;
+  object-fit: cover;
+  object-position: top center;
+
+  @media (min-width: 1025px) {
+    object-fit: contain;
+    object-position: center top;
   }
 `;
+
+
 
 const Overlay = styled.div`
   position: absolute;
