@@ -48,6 +48,7 @@ const TopLine = styled.p`
   font-weight: 400;
   font-family: 'Playfair Display', serif;
   letter-spacing: 0.04em;
+  color: #555;
   margin-bottom: 1.25rem;
 `;
 
