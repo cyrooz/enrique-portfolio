@@ -109,10 +109,21 @@ const LogoBar = styled.div`
   }
 `;
 const StyledImage = styled(Image)`
-  object-fit: cover;
   width: 100%;
   height: 100%;
-  transition: transform 0.4s ease;
+
+  object-fit: cover;
+  object-position: top center;
+
+  @media (min-width: 1025px) {
+    object-fit: contain;
+    object-position: center top;
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    object-fit: cover;
+    object-position: center top;
+  }
 `;
 
 
@@ -142,14 +153,15 @@ padding-bottom: 1rem;
   }
 `;
 
+
 const GridContainer = styled.div.attrs(() => ({
   id: 'looks',
 }))`
   display: grid;
   grid-template-columns: 1fr;
-  max-width: 1600px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 1rem; 
   
   scroll-margin-top: 4rem;
 
@@ -228,31 +240,17 @@ const ImageBlock = styled.div`
 `;
 
 const ImageWrapper = styled.div`
-  max-width: 520px;
-  width: 100%;
-  border-radius: 2px;
-  overflow: hidden;
   position: relative;
-  aspect-ratio: 3 / 4;
+  width: 100%;
+  height: 100svh; // fill available height
+  overflow: hidden;
 
-  &:hover .overlay,
-  &:hover .hover-label {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  &:hover img {
-    transform: scale(1.02);
-  }
-
-  @media (hover: none) {
-    .overlay,
-    .hover-label {
-      display: none;
-    }
+  @media (min-width: 1025px) {
+    height: auto;
+    max-height: min(100vh, 850px);
+    aspect-ratio: 2 / 3;
   }
 `;
-
 
 const HoverOverlay = styled.div`
   position: absolute;

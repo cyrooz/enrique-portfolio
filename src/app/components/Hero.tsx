@@ -74,7 +74,7 @@ const HeroWrapper = styled.section`
 const Figure = styled.figure`
   position: relative;
   width: 100%;
-  height: 100svh; // Optional: use here too
+
   margin: 0;
   padding: 0;
 `;

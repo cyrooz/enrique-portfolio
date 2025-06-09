@@ -7,13 +7,18 @@ const AboutEnrique = () => {
   return (
     <Section>
       <Container>
+        <AboutQuote>
+        A look can tell a whole story 
+          <br />— without saying a word. 
+        </AboutQuote>
+
         <Content>
           <ImageColumn>
             <Image
               src="/enrique.jpg"
               alt="Enrique Melendez"
               width={520}
-              height={624} // ≈ 5:6 ratio
+              height={624}
               style={{
                 objectFit: 'cover',
                 borderRadius: '2px',
@@ -38,7 +43,6 @@ const AboutEnrique = () => {
     </Section>
   );
 };
-
 export default AboutEnrique;
 const Section = styled.section`
   background-color: #f8f8f8;
@@ -48,6 +52,24 @@ const Section = styled.section`
     padding: 0 2rem;
   }
 `;
+const AboutQuote = styled.h2`
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  font-weight: 500;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+  margin: 4rem 0; /* ⬅ even top and bottom spacing */
+
+  @media (max-width: 768px) {
+    font-size: 1.15rem;
+    line-height: 1.75rem;
+    margin: 2rem 0; /* ⬅ matches mobile top and bottom */
+  }
+`;
+
 
 const Container = styled.div`
   max-width: 1200px;
